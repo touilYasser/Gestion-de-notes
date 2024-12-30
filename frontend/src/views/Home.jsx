@@ -21,7 +21,7 @@ function Home() {
 
           <ul className="list-group mt-4">
           {notes && notes.map((note) => (
-              <NoteDetail key={note._id} note={note} />
+              <NoteDetail key={note._id} note={note} setNotes={setNotes} />
           ))}
           </ul>
           

@@ -11,6 +11,8 @@
     "ajv-keywords": "^5.1.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "date-fns": "^4.1.0",
+    "fns": "^1.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1",
