@@ -1,10 +1,12 @@
-import {React, useState} from 'react'
-
+import { React, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 function NoteForm() {
 
     const [titre, setTitre] = useState('');
     const [description, setDescription] = useState('');
     const [error,setError] = useState(null);
+
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,12 +28,13 @@ function NoteForm() {
             setDescription('');
             setError(null);
             console.log('new note added', json);
+            navigate('/');
          }
 
     }
   return (
     <>
-          <form method="post" onSubmit={handleSubmit}>
+          <form className='card p-4' method="post" onSubmit={handleSubmit}>
               <h3>Creer une note</h3>
               <div className="form-group mb-3">
                   <label htmlFor="titre" className="form-label">Titre:</label>
