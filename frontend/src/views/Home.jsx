@@ -17,7 +17,7 @@ function Home() {
 
   return (
     <div className='container'>
-          <h1>HomePage</h1>
+          <h1>Tous Les Notes</h1>
 
           <ul className="list-group mt-4">
           {notes && notes.map((note) => (

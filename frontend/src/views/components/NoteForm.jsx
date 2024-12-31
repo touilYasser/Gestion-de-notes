@@ -44,7 +44,7 @@ function NoteForm() {
                   <label htmlFor="description" className="form-label">Description:</label>
                   <textarea name="description" id="description" rows='5' className="form-control" placeholder='description de la note' value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
               </div>
-              <button className="btn btn-primary mb-3">Ajouter note</button>
+              <button className="btn btn-primary mb-3 fw-bold">Ajouter note</button>
               {error && <div className="alert alert-danger">{error}</div>}
         </form>
     </>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 function NoteDetail({ note, setNotes }) {
@@ -25,9 +25,14 @@ function NoteDetail({ note, setNotes }) {
                 <p> <strong>Description:</strong> {note.description}</p>
                 <span className='text-secondary'>{formatDistanceToNow(new Date(note.createdAt), { addSuffix: true })}</span>
             </div>
-            <button className='btn' onClick={handleDelete}>
+        <div>
+          <Link to={`/edit/${note._id}`} className='btn'>
+            <i className="bi bi-pen-fill text-warning fs-3"></i>
+          </Link>
+          <button className='btn' onClick={handleDelete}>
             <i className="bi bi-trash text-danger fs-3"></i>
-            </button>
+          </button>
+        </div>
         </li>
       </>
   )
