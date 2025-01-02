@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.use('/api/notes', require('./routes/NotesRouter.js'));
+app.use('/api/user', require('./routes/UserRouter.js'));
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
