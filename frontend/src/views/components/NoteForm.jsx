@@ -12,7 +12,7 @@ function NoteForm() {
         e.preventDefault();
 
         const note = { titre, description };
-        const response = await fetch('/api/notes', {
+        const response = await fetch('http://localhost:8000/api/notes', {
             method: 'POST',
             body: JSON.stringify(note),
             headers: {

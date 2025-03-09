@@ -32,7 +32,7 @@ function NoteEdit() {
         e.preventDefault();
         const note = { titre, description };
         try {
-            const response = await fetch(`/api/notes/${id}`, {
+            const response = await fetch(`http://localhost:8000/api/notes/${id}`, {
                 method: "PUT",
                 body: JSON.stringify(note),
                 headers: {

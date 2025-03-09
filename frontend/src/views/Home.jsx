@@ -5,7 +5,7 @@ function Home() {
 
     useEffect(() => {
         const fetchNotes = async () => {
-            const response = await fetch("/api/notes");
+            const response = await fetch("http://localhost:8000/api/notes");
             const json = await response.json();
 
             if (response.ok) {

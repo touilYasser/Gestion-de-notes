@@ -7,7 +7,7 @@ function NoteDetail({ note, setNotes }) {
 
   const handleDelete = async () => {
     setNotes((prevNotes) => prevNotes.filter((n) => n._id !== note._id));
-    const response = await fetch(`/api/notes/${note._id}`, {
+    const response = await fetch(`http://localhost:8000/api/notes/${note._id}`, {
       method: 'DELETE'
     })
     const json = await response.json();
