@@ -12,7 +12,7 @@ function NoteEdit() {
     useEffect(() => {
         const fetchNote = async () => {
             try {
-                const response = await fetch(`/api/notes/${id}`);
+                const response = await fetch(`http://localhost:8000/api/notes/${id}`);
             const json = await response.json();
             if (!response.ok) {
                 setError(json.error || "Erreur lors de la récupération de la note.");

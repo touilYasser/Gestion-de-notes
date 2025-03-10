@@ -12,7 +12,7 @@ function NoteDetail({ note, setNotes }) {
     })
     const json = await response.json();
     if (response.ok) {
-      console.log('note deleted', json);
+      console.log('note supprimmer', json);
       navigate('/');
     }
    }

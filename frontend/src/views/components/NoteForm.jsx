@@ -27,7 +27,7 @@ function NoteForm() {
             setTitre('');
             setDescription('');
             setError(null);
-            console.log('new note added', json);
+            console.log('note ajouter', json);
             navigate('/');
          }
 

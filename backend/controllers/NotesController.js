@@ -1,12 +1,11 @@
 const Note = require('../models/NoteModel');
 
 
-// get all notes
 const getNotes = async(req, res) => {
     try {
         const notes = await Note.find();
         if (!notes) {
-            return res.status(400).json({ error: "No notes found" });
+            return res.status(400).json({ error: "Pas de notes" });
         }
         res.status(200).json(notes);
     } catch (err) {
@@ -14,12 +13,12 @@ const getNotes = async(req, res) => {
     }
 }
 
-// create a note
+
 const createNote = async (req, res) => {
     const { titre, description } = req.body;
     try {
         if (!titre || !description) {
-            return res.status(400).json({ error: "Please enter all fields" });
+            return res.status(400).json({ error: "Veuillez remplir tous les champs" });
         }
         const note = await Note.create({ titre, description });
         res.status(201).json(note);
@@ -28,13 +27,13 @@ const createNote = async (req, res) => {
     }
 }
 
-// get single note
+
 const getSingleNote = async(req, res) => {
     const id = req.params.id
     try {
         const note = await Note.findById(id);
         if (!note) {
-            return res.status(400).json({ error: "No note found" });
+            return res.status(400).json({ error: "Pas de notes" });
         }
         res.status(200).json(note);
     } catch (err) {
@@ -42,14 +41,14 @@ const getSingleNote = async(req, res) => {
     }
 }
 
-// update note
+// modifier note
 const updateNote = async (req, res) => {
     const id = req.params.id;
     const { titre, description } = req.body;
     try {
         const note = await Note.findByIdAndUpdate(id, { titre, description });
         if (!note) {
-            return res.status(400).json({ error: "No note found" });
+            return res.status(400).json({ error: "Pas de notes" });
         }
         res.status(200).json(note);
     } catch (err) {
@@ -57,7 +56,6 @@ const updateNote = async (req, res) => {
    }
 }
 
-// delete note
 const deleteNote = async (req, res) => {
     const id = req.params.id;
     try {
