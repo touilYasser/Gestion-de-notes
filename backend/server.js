@@ -17,6 +17,6 @@ app.use('/api/notes', require('./routes/NotesRouter.js'));
 // connexion a la BD
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
-    app.listen(port, () => console.log(`Connection a la base de donnee et au port 8000 ${port}`)); 
+    app.listen(port, () => console.log(`Connection a la base de donnee et au port ${port}`)); 
     })
     .catch((err) => console.log(err));
